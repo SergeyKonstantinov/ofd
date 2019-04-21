@@ -2,6 +2,7 @@ package com.sergey.tasks;
 import com.sergey.tasks.servlets.HttpServlet;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class HttpServer {
@@ -9,7 +10,8 @@ public class HttpServer {
     public static void main(String[] args) throws Throwable {
 
         Properties props = new Properties();
-        props.load(HttpServer.class.getClassLoader().getResourceAsStream("server.properties"));
+        InputStream resourceAsStream = HttpServer.class.getClassLoader().getResourceAsStream("server.properties");
+        props.load(resourceAsStream);
         //props.load(new FileInputStream("src/main/resources/server.properties"));
 
         int port = Integer.valueOf(props.getProperty("server.port", "8080"));

@@ -30,4 +30,10 @@ public class HttpRequestParserTest {
         System.out.println("Test4");
         assertTrue(2 > 0);
     }
+    
+     @Test
+    public void parse5() throws Exception {
+        System.out.println("Test5");
+        assertTrue(2 > 0);
+    }
 }
